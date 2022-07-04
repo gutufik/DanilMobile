@@ -28,6 +28,11 @@
 
             <DatePicker 
                     Date="{Binding Date}" />
+            
+            <Entry x:Name="etrDescription"
+                   Placeholder="Описание"
+                   Text="{Binding Description}"
+                   />
 
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnCancel"

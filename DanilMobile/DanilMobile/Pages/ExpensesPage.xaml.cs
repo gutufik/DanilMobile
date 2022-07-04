@@ -23,14 +23,14 @@ namespace DanilMobile.Pages
         }
 
 
-        private void lvExpenses_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void lvExpenses_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new Pages.ExpensePage(lvExpenses.SelectedItem as Expense));
+            await Shell.Current.Navigation.PushAsync(new Pages.ExpensePage(lvExpenses.SelectedItem as Expense));
         }
 
-        private void btnAdd_Clicked(object sender, EventArgs e)
+        private async void btnAdd_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Pages.ExpensePage());
+            await Shell.Current.Navigation.PushAsync(new Pages.ExpensePage());
         }
 
         public void RefreshList()

@@ -5,9 +5,10 @@ using SQLite;
 
 namespace DanilMobile.Data
 {
+    [Table("Expense")]
     public class Expense
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
 
         public string ExpenseType { get; set; }

@@ -12,9 +12,9 @@ namespace DanilMobile
         private static LocalDB db;
         private const string dbName = "LocalDb";
 
-        public static LocalDB DB 
+        public static LocalDB DB
         {
-            get 
+            get
             {
                 if (db == null)
                     db = new LocalDB(

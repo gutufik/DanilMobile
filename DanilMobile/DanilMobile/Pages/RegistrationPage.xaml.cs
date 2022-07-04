@@ -33,14 +33,15 @@ namespace DanilMobile.Pages
             etrConfirmPassword.IsPassword = !etrConfirmPassword.IsPassword;
         }
 
-        private void btnCancel_Clicked(object sender, EventArgs e)
+        private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
 
-        private void btnRegister_Clicked(object sender, EventArgs e)
+        private async void btnRegister_Clicked(object sender, EventArgs e)
         {
-
+            App.DB.SaveUser(User);
+            await Navigation.PopAsync();
         }
     }
 }

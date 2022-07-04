@@ -29,6 +29,11 @@ namespace DanilMobile.Data
             return _connection.Table<Expense>().ToList(); 
         }
 
+        public List<ExpenseType> GetExpenseTypes()
+        {
+            return _connection.Table<ExpenseType>().ToList();
+        }
+
         public void SaveUser(User user)
         { 
             _connection.Insert(user);
@@ -47,6 +52,12 @@ namespace DanilMobile.Data
         public void DeleteExpense(Expense expense)
         {
             _connection.Delete(expense);
+            Refresh.Invoke();
+        }
+
+        public void SaveExpenseType(ExpenseType type)
+        {
+            _connection.Insert(type);
             Refresh.Invoke();
         }
     }

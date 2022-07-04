@@ -17,7 +17,7 @@
                        Text="{Binding Password}"
                        IsPassword="True"/>
                 <Button x:Name="btnShowPassword"
-                        Text="a"
+                        ImageSource="icon_eye.png"
                         Clicked="btnShowPassword_Clicked"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -29,7 +29,7 @@
                        Text="{Binding Password}"
                        IsPassword="True"/>
                 <Button x:Name="btnShowConfirmPassword"
-                        Text="a"
+                        ImageSource="icon_eye.png"
                         Clicked="btnShowConfirmPassword_Clicked"/>
             </StackLayout>
             <Entry x:Name="etrMail"

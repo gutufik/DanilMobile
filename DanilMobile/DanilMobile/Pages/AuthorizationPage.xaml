@@ -6,7 +6,7 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
-            <Image/>
+            <Image Source="logo.png"/>
             <Entry x:Name="etrName"
                    Placeholder="Имя"
                    Text="{Binding Name}"/>
@@ -18,7 +18,7 @@
                        Text="{Binding Password}"
                        IsPassword="True"/>
                 <Button x:Name="btnShowPassword"
-                        Text="a"
+                        ImageSource="icon_eye.png"
                         Clicked="btnShowPassword_Clicked"/>
             </StackLayout>
             <Label Text="Нет аккаунта? Зарегистрироваться">

@@ -24,7 +24,7 @@ namespace DanilMobile.Pages
 
         private void btnLogin_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ExpensesPage());
+            App.Current.MainPage = new AppShell();
         }
 
         private void btnShowPassword_Clicked(object sender, EventArgs e)

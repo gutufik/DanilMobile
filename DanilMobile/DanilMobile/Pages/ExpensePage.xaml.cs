@@ -19,6 +19,7 @@ namespace DanilMobile.Pages
             InitializeComponent();
             Expense = new Expense();
             BindingContext = Expense;
+            this.ToolbarItems.Clear();
         }
 
         public ExpensePage(Expense expense)
@@ -28,15 +29,15 @@ namespace DanilMobile.Pages
             BindingContext = Expense;
         }
 
-        private void btnCancel_Clicked(object sender, EventArgs e)
+        private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
         }
 
-        private void btnSave_Clicked(object sender, EventArgs e)
+        private async void btnSave_Clicked(object sender, EventArgs e)
         {
             App.DB.SaveExpense(Expense);
-            Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();
         }
 
         private void btnDel_Clicked(object sender, EventArgs e)
