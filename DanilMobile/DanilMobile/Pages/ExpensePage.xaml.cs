@@ -14,11 +14,15 @@ namespace DanilMobile.Pages
     public partial class ExpensePage : ContentPage
     {
         public Expense Expense { get; set; }
+        public List<string> RecordTypes { get; set; } = new List<string> { "Доход", "Расход" };
+        public List<string> ExpenseTypes { get; set; } = new List<string> { "Тип1", "Тип2", "Тип3" };
         public ExpensePage()
         {
             InitializeComponent();
             Expense = new Expense();
             BindingContext = Expense;
+            pickExpenseType.ItemsSource = ExpenseTypes;
+            pickRecordType.ItemsSource = RecordTypes;
             this.ToolbarItems.Clear();
         }
 
@@ -26,6 +30,8 @@ namespace DanilMobile.Pages
         {
             InitializeComponent();
             Expense = expense;
+            pickExpenseType.ItemsSource = ExpenseTypes;
+            pickRecordType.ItemsSource = RecordTypes;
             BindingContext = Expense;
         }
 
@@ -36,6 +42,8 @@ namespace DanilMobile.Pages
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
+            Expense.ExpenseType = pickExpenseType.SelectedItem.ToString();
+            Expense.RecordType = pickRecordType.SelectedItem.ToString();
             App.DB.SaveExpense(Expense);
             await Navigation.PopAsync();
         }

@@ -11,14 +11,11 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Entry x:Name="etrExpenseType"
-                   Placeholder="Тип"
-                   Text="{Binding ExpenseType}"
-                   />
-            <Entry x:Name="etrRecordType"
-                   Placeholder="Тип"
-                   Text="{Binding RecordType}"
-                   />
+            <Picker x:Name="pickRecordType"
+                    WidthRequest="100"/>
+
+            <Picker x:Name="pickExpenseType"
+                    WidthRequest="100"/>
 
             <Entry x:Name="etrAmount"
                    Placeholder="Сумма"
