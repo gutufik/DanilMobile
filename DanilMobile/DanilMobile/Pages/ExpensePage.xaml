@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DanilMobile.Pages.ExpensePage">
+             x:Class="DanilMobile.Pages.ExpensePage"
+             Visual="Material"
+             Title="Новая запись">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" x:Name="btnDel" Text="Del" Clicked="btnDel_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="etrExpenseType"
+                   Placeholder="Тип"
+                   Text="{Binding ExpenseType}"
+                   />
+            <Entry x:Name="etrRecordType"
+                   Placeholder="Тип"
+                   Text="{Binding RecordType}"
+                   />
+
+            <Entry x:Name="etrAmount"
+                   Placeholder="Сумма"
+                   Text="{Binding Amount}"
+                   Keyboard="Numeric"
+                   />
+
+            <DatePicker 
+                    Date="{Binding Date}" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnCancel"
+                        Text="Отмена"
+                        Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnSave"
+                        Text="Сохранить"
+                        Clicked="btnSave_Clicked"/>
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
