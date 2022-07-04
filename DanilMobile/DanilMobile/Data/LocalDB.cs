@@ -29,6 +29,11 @@ namespace DanilMobile.Data
             return _connection.Table<Expense>().ToList(); 
         }
 
+        public List<Expense> GetExpenses(int userId)
+        {
+            return GetExpenses().FindAll(e => e.UserId == userId);
+        }
+
         public List<ExpenseType> GetExpenseTypes()
         {
             return _connection.Table<ExpenseType>().ToList();

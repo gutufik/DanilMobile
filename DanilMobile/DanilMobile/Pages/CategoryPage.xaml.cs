@@ -24,13 +24,13 @@ namespace DanilMobile.Pages
 
         private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
             App.DB.SaveExpenseType(Type);
-            await Shell.Current.Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
     }
 }

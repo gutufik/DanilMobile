@@ -17,7 +17,7 @@ namespace DanilMobile.Pages
         public ExpensesPage()
         {
             InitializeComponent();
-            Expenses = App.DB.GetExpenses();
+            Expenses = App.DB.GetExpenses(App.User.Id);
             App.DB.Refresh += RefreshList;
             BindingContext = this;
         }
@@ -25,12 +25,12 @@ namespace DanilMobile.Pages
 
         private async void lvExpenses_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Shell.Current.Navigation.PushAsync(new Pages.ExpensePage(lvExpenses.SelectedItem as Expense));
+            await Navigation.PushAsync(new Pages.ExpensePage(lvExpenses.SelectedItem as Expense));
         }
 
         private async void btnAdd_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.Navigation.PushAsync(new Pages.ExpensePage());
+            await Navigation.PushAsync(new Pages.ExpensePage());
         }
 
         public void RefreshList()

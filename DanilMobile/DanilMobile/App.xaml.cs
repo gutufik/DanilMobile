@@ -12,6 +12,8 @@ namespace DanilMobile
         private static LocalDB db;
         private const string dbName = "LocalDb";
 
+        public static User User;
+
         public static LocalDB DB
         {
             get

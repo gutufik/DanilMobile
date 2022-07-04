@@ -22,9 +22,10 @@ namespace DanilMobile.Pages
             Navigation.PushAsync(new RegistrationPage());
         }
 
-        private void btnLogin_Clicked(object sender, EventArgs e)
+        private async void btnLogin_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new AppShell();
+            if ((App.User = App.DB.GetUser(etrName.Text, etrPassword.Text)) != null)
+                await Navigation.PushAsync(new ExpensesPage());
         }
 
         private void btnShowPassword_Clicked(object sender, EventArgs e)
