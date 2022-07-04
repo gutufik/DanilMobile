@@ -4,8 +4,8 @@
              x:Class="DanilMobile.App">
     <Application.Resources>
         <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="Red"/>
-            <Setter Property="BarTextColor" Value="Green"/>
+            <Setter Property="BarBackgroundColor" Value="Brown"/>
+            <Setter Property="BarTextColor" Value="White"/>
         </Style>
     </Application.Resources>
 </Application>

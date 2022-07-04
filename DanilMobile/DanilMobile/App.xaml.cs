@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DanilMobile.Data;
 using System.IO;
+using DanilMobile.Pages;
 
 namespace DanilMobile
 {
@@ -27,7 +28,7 @@ namespace DanilMobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new MainPage());
+            MainPage = new NavigationPage(new AuthorizationPage());
         }
 
         protected override void OnStart()

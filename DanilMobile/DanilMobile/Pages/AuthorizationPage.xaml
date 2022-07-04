@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanilMobile.Pages.AuthorizationPage"
+             Visual="Material"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image/>
+            <Entry x:Name="etrName"
+                   Placeholder="Имя"
+                   Text="{Binding Name}"/>
+            <StackLayout Orientation="Horizontal">
+                
+                <Entry x:Name="etrPassword"
+                       Placeholder="Пароль"
+                       Text="{Binding Password}"
+                       IsPassword="True"/>
+                <Button x:Name="btnShowPassword"
+                        Text="a"
+                        Clicked="btnShowPassword_Clicked"/>
+            </StackLayout>
+            <Label Text="Нет аккаунта? Зарегистрироваться">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="lblRegister" Tapped="lblRegister_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button x:Name="btnLogin"
+                    Text="Войти"
+                    Clicked="btnLogin_Clicked"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanilMobile.Pages.RegistrationPage"
+             Visual="Material">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="etrName"
+                   Placeholder="Логин"
+                   Text="{Binding Name}"
+                   />
+            <StackLayout Orientation="Horizontal">
+
+                <Entry x:Name="etrPassword"
+                       Placeholder="Пароль"
+                       WidthRequest="300"
+                       Text="{Binding Password}"
+                       IsPassword="True"/>
+                <Button x:Name="btnShowPassword"
+                        Text="a"
+                        Clicked="btnShowPassword_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+
+                <Entry 
+                    WidthRequest="300"
+                    x:Name="etrConfirmPassword"
+                       Placeholder="Пароль"
+                       Text="{Binding Password}"
+                       IsPassword="True"/>
+                <Button x:Name="btnShowConfirmPassword"
+                        Text="a"
+                        Clicked="btnShowConfirmPassword_Clicked"/>
+            </StackLayout>
+            <Entry x:Name="etrMail"
+                   Placeholder="Почта"
+                   Text="{Binding Mail}"
+                   />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnCancel"
+                        Text="Отмена"
+                        Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnRegister"
+                        Text="Зарегистрироваться"
+                        Clicked="btnRegister_Clicked"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
