@@ -51,7 +51,10 @@ namespace DanilMobile.Data
 
         public void SaveExpense(Expense expense)
         {
-            _connection.Insert(expense);
+            if (expense.Id == 0)
+                _connection.Insert(expense);
+            else
+                _connection.Update(expense);
             Refresh.Invoke();
         }
         public void DeleteExpense(Expense expense)

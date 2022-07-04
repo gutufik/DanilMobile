@@ -16,9 +16,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding RecordType}"/>
-                                <Label Text="{Binding ExpenseType}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding RecordType}"/>
+                                    <Label Text="{Binding ExpenseType}"/>
+                                </StackLayout>
                                 <Label Text="{Binding Amount}"/>
                             </StackLayout>
                         </ViewCell>

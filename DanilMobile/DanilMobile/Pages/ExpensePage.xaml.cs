@@ -19,11 +19,16 @@ namespace DanilMobile.Pages
         public ExpensePage()
         {
             InitializeComponent();
-            Expense = new Expense();
-            BindingContext = Expense;
+            Expense = new Expense
+            {
+                UserId = App.User.Id
+            };
+
             pickExpenseType.ItemsSource = ExpenseTypes;
             pickRecordType.ItemsSource = RecordTypes;
             this.ToolbarItems.Clear();
+
+            BindingContext = Expense;
         }
 
         public ExpensePage(Expense expense)
@@ -32,6 +37,9 @@ namespace DanilMobile.Pages
             Expense = expense;
             pickExpenseType.ItemsSource = ExpenseTypes;
             pickRecordType.ItemsSource = RecordTypes;
+
+            pickExpenseType.SelectedItem = ExpenseTypes.FirstOrDefault(et => et == Expense.ExpenseType);
+            pickRecordType.SelectedItem = RecordTypes.FirstOrDefault(et => et == Expense.RecordType);
             BindingContext = Expense;
         }
 

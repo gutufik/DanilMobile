@@ -35,7 +35,7 @@ namespace DanilMobile.Pages
 
         public void RefreshList()
         {
-            Expenses = App.DB.GetExpenses();
+            Expenses = App.DB.GetExpenses(App.User.Id);
             lvExpenses.ItemsSource = Expenses;
         }
     }

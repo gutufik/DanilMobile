@@ -19,6 +19,8 @@ namespace DanilMobile.Data
 
         public DateTime Date { get; set; }
 
+        public string Description { get; set; }
+
         public int UserId { get; set; }
     }
 }
